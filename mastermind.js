@@ -22,6 +22,10 @@ function checkGuess(guess, solution) {
   // first determine how many characters total the two strings have in common
   // This may help:
   // https://github.com/bonnie/udemy-ENZYME/blob/master/context-base/src/helpers/index.js
+
+    const secretLetters = solution.split('');
+    const guessedLetterSet = new Set(guess);
+    secretLetters.filter(letter => guessedLetterSet.has(letter)).length;
   //
   // then determine how many of those characters are in the right place
   // hint: iterate through characters of guess and compare to character
@@ -32,6 +36,34 @@ function checkGuess(guess, solution) {
   // characters not in the right place"
   // for example, "2-1"
   //
+    const correctGuessPosition=0;
+    const inCorrectGuessPosition=0;
+
+    
+  //
+  // then determine how many of those characters are in the right place
+  // hint: iterate through characters of guess and compare to character
+  // in the same position in solution
+  //
+
+
+    for(let x=1; x<=secretLetters.length; x++){
+        if(guessedLetterSet[x]===secretLetters[x]){
+          correctGuessPosition ++;
+
+        }else if(guessedLetterSet[x]!==secretLetters[x]){
+          inCorrectGuessPosition ++;
+        }
+    }
+
+  // finally, return a string in the format
+  // "count of correct characters in the right place"-"count of correct
+  // characters not in the right place"
+  // for example, "2-1"
+  //
+    return `${correctGuessPosition}-${inCorrectGuessPosition}`;
+
+
 }
 
 // https://jsdoc.app
