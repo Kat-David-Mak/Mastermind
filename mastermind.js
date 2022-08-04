@@ -2,7 +2,7 @@
 /**
  * @function checkGuess
  * Checks guess for "mastermind" game against solution
- *
+ 
  * @param {string} guess - the solution to the
  * @param {string} solution - the target for the guess
  *
